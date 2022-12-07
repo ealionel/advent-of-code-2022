@@ -122,6 +122,8 @@ void run_program(vector<string> input, Node* root) {
             current->add_child(dir_node);
         }
     }
+
+    compute_dir_size(root);
 }
 
 int find_dir_less_than(Node* root, int max_size) {
@@ -171,7 +173,7 @@ int main() {
     Node* rootptr = &root;
 
     run_program(input, &root);
-    int root_size = compute_dir_size(rootptr);
+    int root_size = rootptr->size;
 
     int solution1 = find_dir_less_than(rootptr, 100000);
 
